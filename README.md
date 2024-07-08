@@ -33,10 +33,19 @@ This repository contains a shell script to set up a Google Kubernetes Engine (GK
     CLUSTER_SA_DESCRIPTION="your-cluster-sa-description"
     ```
 
+3. If you don't want to configure `kubectl` to use the newly created cluster, delete the secion below from `setup_gke_cluster.sh` script:
+    ```bash
+    echo "Connect to the cluster:"
+    gcloud container clusters get-credentials "$CLUSTER_NAME" \
+        --location="$REGION" \
+        --project="$PROJECT_ID"
+    ```
+
 3. Run the script:
     ```bash
     sh ./setup_gke_cluster.sh
     ```
+
 
 ## Example Variables
 

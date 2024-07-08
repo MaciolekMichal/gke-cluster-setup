@@ -30,3 +30,8 @@ gcloud container clusters create-auto "$CLUSTER_NAME" \
     --location="$REGION" \
     --service-account="$CLUSTER_SA_NAME@$PROJECT_ID.iam.gserviceaccount.com" \
     --project="$PROJECT_ID"
+
+echo "Connect to the cluster:"
+gcloud container clusters get-credentials "$CLUSTER_NAME" \
+  --location="$REGION" \
+  --project="$PROJECT_ID"
