@@ -58,3 +58,8 @@ CLUSTER_NAME="drone-navigation-cluster"
 CLUSTER_SA_NAME="drone-navigation-cluster-sa"
 CLUSTER_SA_DISPLAY_NAME="GKE Autopilot Cluster Service Account For Drone Navigation"
 CLUSTER_SA_DESCRIPTION="Service account for managing GKE Autopilot cluster, providing necessary permissions for cluster operations regarding drone navigation."
+```
+
+## Documentation
+
+For more detailed information on creating an Autopilot cluster, refer to the official Google Cloud documentation: [Creating an Autopilot cluster](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-an-autopilot-cluster)
