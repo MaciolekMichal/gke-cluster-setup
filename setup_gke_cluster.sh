@@ -29,6 +29,10 @@ gcloud iam service-accounts create "$CLUSTER_SA_NAME" \
   --display-name="$CLUSTER_SA_DISPLAY_NAME" \
   --description="$CLUSTER_SA_DESCRIPTION"
 
+gcloud projects add-iam-policy-binding "$PROJECT_ID" \
+    --role=roles/artifactregistry.reader \
+    --member="serviceAccount:$CLUSTER_SA_NAME@$PROJECT_ID.iam.gserviceaccount.com" \
+
 echo "Create an Autopilot cluster:"
 gcloud container clusters create-auto "$CLUSTER_NAME" \
     --location="$REGION" \
