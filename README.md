@@ -40,6 +40,12 @@ This repository contains a shell script to set up a Google Kubernetes Engine (GK
 3. Modify the IAM role bindings from the `setup_gke_cluster.sh` script based on your project needs:
     ```bash
     gcloud projects add-iam-policy-binding "$PROJECT_ID" \
+        --role=roles/artifactregistry.reader \
+        --member="serviceAccount:$CLUSTER_SA_NAME@$PROJECT_ID.iam.gserviceaccount.com"
+    ```
+    ...
+    ```bash
+    gcloud projects add-iam-policy-binding "$PROJECT_ID" \
         --role=roles/bigquery.dataEditor \
         --member="$WIF_SA" \
         --condition=None
